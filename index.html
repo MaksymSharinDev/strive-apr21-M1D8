@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<!--
+ASSIGNMENT RULES
+- The solution must be pushed to the repository and be available for the tutors by the end of the day
+- You can ask for tutor's help
+- You can google / use StackOverflow BUT we suggest you to use just the material provided
+- To test the page, just open it with your default browser.
+
+ASSIGNMENT TOPIC
+You are building a task list site.
+The have a list of tasks and can, at any time, add a new one, delete one or sort the whole bunch of them
+-->
+<html lang="en">
+
+
+  <title>  s̶͓̓́́̎̕͝t̸̨̛̲͙͓̫̝͆̃̈́̑͒͘r̶̮̭͐̏͒̂͛ǐ̸͈̯̠͔̲͎́́͗͝v̸̭̥̟̹̟̀̂ë̴̛̛͖́̀̆̿̍̐́͘-̷̡̨̟̟̱̪͌̑a̴̰̜̐̿͑̾͝͝p̶̺̩̳̲̝̹͛͊̾́ͅr̴̩̝̫̻̠̭̈́̒̊͐̍̆̉͌́͝2̶̨̖̫̖̼͔̮͈̮͔͚̔1̴̢͈͙̖̰̳̟̤̬̬̍̇̍͂-̵̧̠̣̺̯̳̱͖̈̀͂̈͐̍̕͠Ṃ̷̞̤̝̼̦͎̟̓͛͋͠1̸̖̤̮̲̥̿͂̐͘Ď̸̨̰͓̖̚8̵̯͈̮̭̂̊̇͑̐̏̈́̋͘͜͠ </title>
+
+  <head>
+    <!-- EXERCISE 1:
+    Specify the title, the charset (UTF-8) and the viewport of the page.
+    -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+    integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" 
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
+
+    <style>
+      body{
+        background-image: url(assets/background.gif);
+        background-repeat: no-repeat;
+        background-size:     cover; 
+        text-align: center;
+        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0  rgba(255, 255, 255), -1px 1px 0  rgba(255, 255, 255), 1px 1px 0  rgba(255, 255, 255);
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: purple;
+        
+      }
+      * { margin: 5px; }
+      #myTaskList{
+        background-image: url(assets/task-background.gif);
+        width: clamp(250px,50%, 2000px);
+        padding: 50px;
+        margin-left: 25%;
+        margin-right: 25%;
+        border-block-style: solid;
+        border-color: purple;
+        border-radius: 50px;
+        background-size: cover;
+      }
+      #myTaskList > li{
+        text-align: center;
+        border-style: solid;
+        border-radius: 15px;
+        border-color: purple;
+        background-color: black;
+        opacity: 0.78;
+        font-size: 1.8rem;
+        font-weight: 1000;
+      }
+      .btn-outline-danger{
+        background-color: purple;
+        color: black;
+        margin: 2px
+      }
+
+
+      
+      /* EXERCISE 2:  
+       Create a CSS class for the task list with a diverse background
+       Create a CSS class for the task list item with a border, a bold text and a bigger font size
+       Style every button of the page to be bigger
+    */
+    </style>
+  </head>
+  <body>
+    <h1>Welcome to your personal Task List!</h1>
+    <br />
+
+    <span
+      >You can add any task you like by writing it in the specified field and
+      then press "Add new task"</span
+    ><br /><br />
+
+    <input class="btn btn-danger btn-lg" type="text" id="newTask" />
+      <script >
+        let addNewTask = ()=> {
+          let taskListNode = document.getElementById('myTaskList')
+          let li = document.createElement('li')
+          let input = document.getElementById('newTask')
+          li.innerText = input.value 
+          taskListNode.append(li)
+        }
+      </script>
+      <div class="d-flex justify-content-center m2">
+        <input class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
+        <input class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
+        <input class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
+      </div>
+    
+    
+    
+    <!-- EXERCISE 3
+        Create a button "Remove Last Task" to trigger the method "removeLast"
+        -->
+
+    <!-- EXERCISE 4
+        Create a button "Remove First Task" to trigger the method "removeFirst"
+        -->
+
+    <ul id="myTaskList">
+
+      <li> example </li>
+    </ul>
+
+    <hr />
+
+    <input class="btn btn-outline-danger btn-lg" type="color" placeholder="Color" id="colorPicker" />
+    <input
+      class="btn btn-outline-danger btn-lg"
+      type="button"
+      value="Change task background"
+      onclick="changeTaskBackgroundColor()"
+    />
+
+    <hr />
+
+    <input type="button" value="Sort" onclick="bubblesort()" />
+
+    <script>
+      /* EXERCISE 5: 
+                Add a new task to the list.
+                Suggestion:
+                - Use document.getElementById to get the UL item and the input text
+                - Use the document.createElement to create the new List Item
+                - Append the child to the UL
+            */
+
+      /* EXERCISE 6: 
+                Create a method "removeLast" which removes the last item from the task list
+            */
+
+      /* EXERCISE 7: 
+                Create a method "removeFirst" which removes the first item from the task list
+            */
+
+      /* EXERCISE 8: 
+               Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
+            */
+
+      /* EXERCISE 9:
+               Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
+               onchange event listener ad applies it as background to every list item
+            */
+
+      /* EXTRA */
+
+      /* EXERCISE 10: 
+               Create a method "bubbleSort()" which sort the task list alphabetically using the bubble sort algorithm
+            
+               Use your spare time to beautify your task list via CSS.
+
+               Suggestion:
+               - Break the code into many function for semplicity 
+               - Reuse the functions previously created
+            */
+    </script>
+  </body>
+</html>
