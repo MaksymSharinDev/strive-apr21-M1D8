@@ -13,135 +13,184 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 <html lang="en">
 
 
-  <title>  s̶͓̓́́̎̕͝t̸̨̛̲͙͓̫̝͆̃̈́̑͒͘r̶̮̭͐̏͒̂͛ǐ̸͈̯̠͔̲͎́́͗͝v̸̭̥̟̹̟̀̂ë̴̛̛͖́̀̆̿̍̐́͘-̷̡̨̟̟̱̪͌̑a̴̰̜̐̿͑̾͝͝p̶̺̩̳̲̝̹͛͊̾́ͅr̴̩̝̫̻̠̭̈́̒̊͐̍̆̉͌́͝2̶̨̖̫̖̼͔̮͈̮͔͚̔1̴̢͈͙̖̰̳̟̤̬̬̍̇̍͂-̵̧̠̣̺̯̳̱͖̈̀͂̈͐̍̕͠Ṃ̷̞̤̝̼̦͎̟̓͛͋͠1̸̖̤̮̲̥̿͂̐͘Ď̸̨̰͓̖̚8̵̯͈̮̭̂̊̇͑̐̏̈́̋͘͜͠ </title>
+<title>
+  s̶͓̓́́̎̕͝t̸̨̛̲͙͓̫̝͆̃̈́̑͒͘r̶̮̭͐̏͒̂͛ǐ̸͈̯̠͔̲͎́́͗͝v̸̭̥̟̹̟̀̂ë̴̛̛͖́̀̆̿̍̐́͘-̷̡̨̟̟̱̪͌̑a̴̰̜̐̿͑̾͝͝p̶̺̩̳̲̝̹͛͊̾́ͅr̴̩̝̫̻̠̭̈́̒̊͐̍̆̉͌́͝2̶̨̖̫̖̼͔̮͈̮͔͚̔1̴̢͈͙̖̰̳̟̤̬̬̍̇̍͂-̵̧̠̣̺̯̳̱͖̈̀͂̈͐̍̕͠Ṃ̷̞̤̝̼̦͎̟̓͛͋͠1̸̖̤̮̲̥̿͂̐͘Ď̸̨̰͓̖̚8̵̯͈̮̭̂̊̇͑̐̏̈́̋͘͜͠
+</title>
 
-  <head>
-    <!-- EXERCISE 1:
+<head>
+  <!-- EXERCISE 1:
     Specify the title, the charset (UTF-8) and the viewport of the page.
     -->
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" 
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
     integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" 
-    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="glitchedtext.css">
-    <style>
-      @font-face {
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js"
+    integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF"
+    crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="vendor/Flat-HTML5-Palette-Color-Picker/colorPick.css">
+  <link rel="stylesheet" href="vendor/Flat-HTML5-Palette-Color-Picker/colorPick.dark.theme.css">
+  <script src="vendor/Flat-HTML5-Palette-Color-Picker/colorPick.js"></script>
+
+  
+
+  <link rel="stylesheet" href="glitchedtext.css">
+  <style>
+    @font-face {
       font-family: "Hacked";
       src: url(https://hackedfont.com/HACKED.ttf);
-      }
-      body{
-        background-image: url(assets/background.gif);
-        background-repeat: no-repeat;
-        background-size:     cover; 
-        text-align: center;
-        text-shadow: 
-        -1px -1px 0 black,
-        1px -1px 0  black,
-        -1px 1px 0  black, 
-        1px 1px 0  black;
-        font-size: 1.5rem;
-        font-weight: 700;
-        color: purple;
-        
-      }
-      * { margin: 5px; font-family: Hacked; }
-      #myTaskList{
-        
-        background-image: url(assets/task-background.gif);
-        width: clamp(250px,50%, 2000px);
-        padding: 50px;
-        margin-left: 25%;
-        margin-right: 25%;
-        border-block-style: solid;
-        border-color: purple;
-        border-radius: 50px;
-        background-size: cover;
-      }
-      #myTaskList > li{
-        text-align: center;
-        border-style: solid;
-        border-radius: 15px;
-        border-color: purple;
-        background-color: black;
-        opacity: 0.78;
-        font-size: 1.8rem;
-        font-weight: 1000;
-      }
-      .btn-outline-danger{
-        background-color: purple;
-        color: black;
-        margin: 2px
-      }
-      .glitch{
-        font-size: 2.2rem;
-        color: purple;
-      }
+    }
 
-      
-      
-      /* EXERCISE 2:  
+    body {
+      background-image: url(assets/background.gif);
+      background-repeat: no-repeat;
+      background-size: cover;
+      text-align: center;
+      text-shadow:
+        -1px -1px 0 black,
+        1px -1px 0 black,
+        -1px 1px 0 black,
+        1px 1px 0 black;
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: purple;
+
+    }
+
+    * {
+      margin: 5px;
+      font-family: Hacked;
+    }
+
+    #myTaskList {
+
+      background-image: url(assets/task-background.gif);
+      width: clamp(250px, 50%, 2000px);
+      padding: 50px;
+      margin-left: 25%;
+      margin-right: 25%;
+      border-block-style: solid;
+      border-color: purple;
+      border-radius: 50px;
+      background-size: cover;
+    }
+
+    #myTaskList>li {
+      text-align: center;
+      border-style: solid;
+      border-radius: 15px;
+      border-color: purple;
+      background-color: black;
+      opacity: 0.85;
+      font-size: 1.8rem;
+      font-weight: 1000;
+    }
+
+    .btn-outline-danger {
+      min-width: 250px;
+      background-color: purple;
+      color: black;
+      margin: 2px
+    }
+
+    .glitch {
+      font-size: 2.2rem;
+      color: purple;
+    }
+    .glitch::after {
+    text-shadow: -1px 0 firebrick;
+    color: firebrick;
+    }
+    .glitch::before {
+
+    color: firebrick;
+    }
+    .colorPickSelector {
+      border-radius: 5px;
+      width: 36px;
+      height: 36px;
+      cursor: pointer;
+      -webkit-transition: all linear .2s;
+      -moz-transition: all linear .2s;
+      -ms-transition: all linear .2s;
+      -o-transition: all linear .2s;
+      transition: all linear .2s;
+    }
+
+.colorPickSelector:hover { transform: scale(1.1); }
+
+
+    /* EXERCISE 2:  
        Create a CSS class for the task list with a diverse background
        Create a CSS class for the task list item with a border, a bold text and a bigger font size
        Style every button of the page to be bigger
     */
-    </style>
+  </style>
 
   
-  </head>
-  <body>
-    <h1 style="margin-top:50px" class="glitch" data-text="Welcome to your personal Task List!"> Welcome to your personal Task List!</h1>
-    <br/>
+</head>
 
-    <span class="glitch" data-text='You can add any task you like by writing it in the specified field and then press "Add new task"' 
-      >You can add any task you like by writing it in the specified field and then press "Add new task"</span
-    ><br /><br />
+<body>
+  
+  <h1 style="margin-top:50px" class="glitch" data-text="Welcome to your personal Task List!"> Welcome to your personal
+    Task List!</h1>
+  <br />
 
-    <input class="btn btn-danger btn-lg" type="text" id="newTask" placeholder="write here task name" />
+  <span class="glitch"
+    data-text='You can add any task you like by writing it in the specified field and then press "Add new task"'>You can
+    add any task you like by writing it in the specified field and then press "Add new task"</span><br /><br />
 
-      <div class="d-flex justify-content-center m2">
-        <input class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
-        <input class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
-        <input class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
-        <input class="btn btn-outline-danger btn-lg" type="button" value="getTasksAsArray()" onclick="getTasksAsArray()"
-        style="margin-left : 10px" />
-      </div>
-    
-    
-    
-    <!-- EXERCISE 3
+  <input class="btn btn-danger btn-lg" type="text" id="newTask" placeholder="write here task name" />
+  <div class="container">
+    <div class="row justify-content-center">
+      <input class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
+      <input class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
+      <input class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
+      <input class="btn btn-outline-danger btn-lg" type="button" value="getTasksAsArray()" onclick="getTasksAsArray()" />
+    </div>
+  </div>
+    <!---  <div class="d-flex flex-sm-row flex-column justify-content-center m2">--->
+
+  <!-- EXERCISE 3
         Create a button "Remove Last Task" to trigger the method "removeLast"
         -->
 
-    <!-- EXERCISE 4
+  <!-- EXERCISE 4
         Create a button "Remove First Task" to trigger the method "removeFirst"
         -->
 
-    <ul id="myTaskList">
+  <ul id="myTaskList">
+  </ul>
 
-      <li> example </li>
-    </ul>
+  <hr/>
+  <div class="row justify-content-center">
+  <div id="colorPicker" class="colorPickSelector" onchangeActive=false style="position: relative; bottom: -2px;" ></div> 
+  <input hidden class="btn btn-outline-danger btn-lg" type="color" placeholder="Color" id="colorPickerOld" style="min-width: 100px; min-height: 50px;"/>
+  <input id="toggleColor"  class="btn btn-outline-danger btn-lg" type="button" value="Change task background"
+    onclick="changeTaskBackgroundColor()" />
+  </div>
+  <hr/>
 
-    <hr />
+  <input hidden type="button" value="Sort" onclick="bubblesort()" />
 
-    <input class="btn btn-outline-danger btn-lg" type="color" placeholder="Color" id="colorPicker" />
-    <input
-      id="toggleColor"
-      class="btn btn-outline-danger btn-lg"
-      type="button"
-      value="Change task background"
-      onclick="changeTaskBackgroundColor()"
-    />
-
-    <hr />
-
-    <input hidden type="button" value="Sort" onclick="bubblesort()" />
-
-    <script>
-
+  <script>
       let input = document.getElementById('newTask').value = ''
+
+      
+      $(".colorPickSelector").colorPick({
+        'initialColor': '#8e44ad',
+        'allowRecent': false,
+        'recentMax': 5,
+        'allowCustomColor': true,
+        'palette': [ "#8e44ad", "#34495e", "#2c3e50" , "#1abc9c", "#16a085", "#2ecc71", "#27ae60", "#9b59b6"],
+        'onColorSelected': function() {
+          this.element.css({ 'color': this.color , 'background-color': this.color})
+          this.element[0].dispatchEvent(new Event('change'));
+        }
+      });
 
       /* EXERCISE 5: 
               Add a new task to the list.
@@ -149,82 +198,90 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
               - Use document.getElementById to get the UL item and the input text
               - Use the document.createElement to create the new List Item
               - Append the child to the UL
-          */
-      const addNewTask = ()=> {
+      */
+      const addNewTask = () => {
         let taskListNode = document.getElementById('myTaskList')
         let li = document.createElement('li')
         let input = document.getElementById('newTask')
-        li.innerText = input.value 
+        if ( input.value !== '' ){ 
+        li.innerText = input.value
         input.value = ''
-        taskListNode.append(li)
+        taskListNode.append(li) }
       }
 
-    /* EXERCISE 6: 
-              Create a method "removeLast" which removes the last item from the task list
-          */
-          const removeLast = () => {
+      /* EXERCISE 6: 
+      Create a method "removeLast" which removes the last item from the task list
+      */
+      const removeLast = () => {
         let taskListNode = document.getElementById('myTaskList')
+        
+        
         taskListNode.lastChild.remove()
       }
-      
-      
+
+
       /* EXERCISE 7: 
-              Create a method "removeFirst" which removes the first item from the task list
-          */
-          const removeFirst = () => {
+      Create a method "removeFirst" which removes the first item from the task list
+      */
+      const removeFirst = () => {
         let taskListNode = document.getElementById('myTaskList')
-        taskListNode.firstChild.remove() }
+        // About node.remove(): bug in mozilla remove implementation https://bugzilla.mozilla.org/show_bug.cgi?id=1345301
+        while ( taskListNode.firstChild !== null ) taskListNode.firstChild.remove()
+      }
       /* EXERCISE 8: 
-             Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
-          */
+      Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
+      */
       const getTasksAsArray = () => {
         let array = []
         let taskListNode = document.getElementById('myTaskList')
-        taskListNode.childNodes.forEach( node => array.push( node.innerText )) 
-        console.log( array )
-        alert( JSON.stringify(array) )
-       }
-       /* EXERCISE 9:
-             Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
-             onchange event listener ad applies it as background to every list item
-          */
-       const changeTaskBackgroundColor = function()  {
+        taskListNode.childNodes.forEach(node => !!node.innerText ? array.push(node.innerText) : null )
+        alert(JSON.stringify(array))
+      }
+      /* EXERCISE 9:
+            Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
+            onchange event listener ad applies it as background to every list item
+         */
+      const changeTaskBackgroundColor = function () {
         let colorPicker = document.getElementById('colorPicker')
-        
-        flag = colorPicker.hasAttribute('onchangeActive')
-        const eventHandler = function (e){
+        console.log( colorPicker.getAttributeNode('onchangeActive') )
+        buttonActive = colorPicker.getAttributeNode('onchangeActive').value === "true"
+
+        const eventHandler = function taskColorChange(e) { //adding and removing handlers need named function for working
           let taskListNodes = document.querySelectorAll('#myTaskList > li')
-          
           console.log(taskListNodes)
-          taskListNodes.forEach( node => node.style.backgroundColor = e.target.value ) 
-          
+          taskListNodes.forEach(node => node.style.backgroundColor = e.target.style.color)
         }
+
         let toggleColor = document.getElementById('toggleColor')
-         !flag 
-         ?  (()=>{
-          colorPicker.addEventListener('change', eventHandler )
-          colorPicker.setAttribute('onchangeActive',true)
-          toggleColor.style.backgroundColor = "black"
-         })()
-         :  (()=>{
-          colorPicker.removeEventListener('change', eventHandler )
-          colorPicker.removeAttribute('onchangeActive')
-          toggleColor.removeAttribute('style')  
-        })()
-         
-         
-       }
-    /* EXTRA */
 
-    /* EXERCISE 10: 
-             Create a method "bubbleSort()" which sort the task list alphabetically using the bubble sort algorithm
-          
-             Use your spare time to beautify your task list via CSS.
+        buttonActive
+          ? (() => {
+            colorPicker.setAttribute('onchangeActive', false )
+            colorPicker.removeEventListener('change', eventHandler)
+            ('remove listener')
+            toggleColor.removeAttribute('style')
+          })()
+          : (() => {
+            colorPicker.addEventListener('change', eventHandler)
+            colorPicker.setAttribute('onchangeActive', true)
+            toggleColor.style.backgroundColor = "black"
+          })()
 
-             Suggestion:
-             - Break the code into many function for semplicity 
-             - Reuse the functions previously created
-          */
+
+      }
+      /* EXTRA */
+
+      /* EXERCISE 10: 
+               Create a method "bubbleSort()" which sort the task list alphabetically using the bubble sort algorithm
+            
+               Use your spare time to beautify your task list via CSS.
+      
+               Suggestion:
+               - Break the code into many function for semplicity 
+               - Reuse the functions previously created
+            */
+    
   </script>
-  </body>
+</body>
+
 </html>
