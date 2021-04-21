@@ -87,58 +87,6 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
     <input class="btn btn-danger btn-lg" type="text" id="newTask" />
       <script >
-        let input = document.getElementById('newTask').value = ''
-        const addNewTask = ()=> {
-          let taskListNode = document.getElementById('myTaskList')
-          let li = document.createElement('li')
-          let input = document.getElementById('newTask')
-          li.innerText = input.value 
-          input.value = ''
-          taskListNode.append(li)
-        }
-
-        const removeFirst = () => {
-          let taskListNode = document.getElementById('myTaskList')
-          taskListNode.firstChild.remove()
-        }
-        const removeLast = () => {
-          let taskListNode = document.getElementById('myTaskList')
-          taskListNode.lastChild.remove()
-        }
-        const getTasksAsArray = () => {
-          let array = []
-          let taskListNode = document.getElementById('myTaskList')
-          taskListNode.childNodes.forEach( node => array.push( node.innerText )) 
-          console.log( array )
-          alert( JSON.stringify(array) )
-         }
-         const changeTaskBackgroundColor = function()  {
-          let colorPicker = document.getElementById('colorPicker')
-          
-          flag = colorPicker.hasAttribute('onchangeActive')
-          const eventHandler = function (e){
-            let taskListNodes = document.querySelectorAll('#myTaskList > li')
-            
-            console.log(taskListNodes)
-            taskListNodes.forEach( node => node.style.backgroundColor = e.target.value ) 
-            
-          }
-          let toggleColor = document.getElementById('toggleColor')
-           !flag 
-           ?  (()=>{
-            colorPicker.addEventListener('change', eventHandler )
-            colorPicker.setAttribute('onchangeActive',true)
-            toggleColor.style.backgroundColor = "black"
-           })()
-           :  (()=>{
-            colorPicker.removeEventListener('change', eventHandler )
-            colorPicker.removeAttribute('onchangeActive')
-            toggleColor.removeAttribute('style')  
-          })()
-           
-           
-         }
-
       </script>
       <div class="d-flex justify-content-center m2">
         <input class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
@@ -176,34 +124,83 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
     <hr />
 
-    <input type="button" value="Sort" onclick="bubblesort()" />
+    <input hidden type="button" value="Sort" onclick="bubblesort()" />
 
     <script>
-      /* EXERCISE 5: 
+
+        let input = document.getElementById('newTask').value = ''
+
+        /* EXERCISE 5: 
                 Add a new task to the list.
                 Suggestion:
                 - Use document.getElementById to get the UL item and the input text
                 - Use the document.createElement to create the new List Item
                 - Append the child to the UL
             */
+        const addNewTask = ()=> {
+          let taskListNode = document.getElementById('myTaskList')
+          let li = document.createElement('li')
+          let input = document.getElementById('newTask')
+          li.innerText = input.value 
+          input.value = ''
+          taskListNode.append(li)
+        }
 
       /* EXERCISE 6: 
                 Create a method "removeLast" which removes the last item from the task list
             */
-
-      /* EXERCISE 7: 
+            const removeLast = () => {
+          let taskListNode = document.getElementById('myTaskList')
+          taskListNode.lastChild.remove()
+        }
+        
+        }
+        /* EXERCISE 7: 
                 Create a method "removeFirst" which removes the first item from the task list
             */
-
-      /* EXERCISE 8: 
+            const removeFirst = () => {
+          let taskListNode = document.getElementById('myTaskList')
+          taskListNode.firstChild.remove()
+        /* EXERCISE 8: 
                Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
             */
-
-      /* EXERCISE 9:
+        const getTasksAsArray = () => {
+          let array = []
+          let taskListNode = document.getElementById('myTaskList')
+          taskListNode.childNodes.forEach( node => array.push( node.innerText )) 
+          console.log( array )
+          alert( JSON.stringify(array) )
+         }
+         /* EXERCISE 9:
                Create a method "changeTaskBackgroundColor" which takes the color from the color picker with an 
                onchange event listener ad applies it as background to every list item
             */
-
+         const changeTaskBackgroundColor = function()  {
+          let colorPicker = document.getElementById('colorPicker')
+          
+          flag = colorPicker.hasAttribute('onchangeActive')
+          const eventHandler = function (e){
+            let taskListNodes = document.querySelectorAll('#myTaskList > li')
+            
+            console.log(taskListNodes)
+            taskListNodes.forEach( node => node.style.backgroundColor = e.target.value ) 
+            
+          }
+          let toggleColor = document.getElementById('toggleColor')
+           !flag 
+           ?  (()=>{
+            colorPicker.addEventListener('change', eventHandler )
+            colorPicker.setAttribute('onchangeActive',true)
+            toggleColor.style.backgroundColor = "black"
+           })()
+           :  (()=>{
+            colorPicker.removeEventListener('change', eventHandler )
+            colorPicker.removeAttribute('onchangeActive')
+            toggleColor.removeAttribute('style')  #
+          })()
+           
+           
+         }
       /* EXTRA */
 
       /* EXERCISE 10: 
