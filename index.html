@@ -26,21 +26,30 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.min.js" 
     integrity="sha384-+YQ4JLhjyBLPDQt//I+STsc9iw4uQqACwlvpslubQzn4u2UU2UFM80nGisd026JF" crossorigin="anonymous"></script>
-
+    <link rel="stylesheet" href="glitchedtext.css">
     <style>
+      @font-face {
+      font-family: "Hacked";
+      src: url(https://hackedfont.com/HACKED.ttf);
+      }
       body{
         background-image: url(assets/background.gif);
         background-repeat: no-repeat;
         background-size:     cover; 
         text-align: center;
-        text-shadow: -1px -1px 0 rgb(255, 255, 255), 1px -1px 0  rgba(255, 255, 255), -1px 1px 0  rgba(255, 255, 255), 1px 1px 0  rgba(255, 255, 255);
+        text-shadow: 
+        -1px -1px 0 black,
+        1px -1px 0  black,
+        -1px 1px 0  black, 
+        1px 1px 0  black;
         font-size: 1.5rem;
         font-weight: 700;
         color: purple;
         
       }
-      * { margin: 5px; }
+      * { margin: 5px; font-family: Hacked; }
       #myTaskList{
+        
         background-image: url(assets/task-background.gif);
         width: clamp(250px,50%, 2000px);
         padding: 50px;
@@ -66,8 +75,11 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         color: black;
         margin: 2px
       }
+      .glitch{
+        font-size: 25px;
+      }
 
-
+      
       
       /* EXERCISE 2:  
        Create a CSS class for the task list with a diverse background
@@ -75,17 +87,18 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
        Style every button of the page to be bigger
     */
     </style>
+
+  
   </head>
   <body>
-    <h1>Welcome to your personal Task List!</h1>
-    <br />
+    <h1 style="margin-top:50px" class="glitch" data-text="Welcome to your personal Task List!"> Welcome to your personal Task List!</h1>
+    <br/>
 
-    <span
-      >You can add any task you like by writing it in the specified field and
-      then press "Add new task"</span
+    <span class="glitch" data-text='You can add any task you like by writing it in the specified field and then press "Add new task"' 
+      >You can add any task you like by writing it in the specified field and then press "Add new task"</span
     ><br /><br />
 
-    <input class="btn btn-danger btn-lg" type="text" id="newTask" />
+    <input class="btn btn-danger btn-lg" type="text" id="newTask" placeholder="write here task name" />
       <script >
       </script>
       <div class="d-flex justify-content-center m2">
