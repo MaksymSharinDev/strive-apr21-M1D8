@@ -122,13 +122,13 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         taskListNode.lastChild.remove()
       }
       
-      }
+      
       /* EXERCISE 7: 
               Create a method "removeFirst" which removes the first item from the task list
           */
           const removeFirst = () => {
         let taskListNode = document.getElementById('myTaskList')
-        taskListNode.firstChild.remove()
+        taskListNode.firstChild.remove() }
       /* EXERCISE 8: 
              Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
           */
@@ -164,7 +164,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
          :  (()=>{
           colorPicker.removeEventListener('change', eventHandler )
           colorPicker.removeAttribute('onchangeActive')
-          toggleColor.removeAttribute('style')  #
+          toggleColor.removeAttribute('style')  
         })()
          
          
@@ -193,7 +193,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         <input class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
         <input class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
         <input class="btn btn-outline-danger btn-lg" type="button" value="getTasksAsArray()" onclick="getTasksAsArray()"
-        style="marigin-left : 10px" />
+        style="margin-left : 10px" />
       </div>
     
     
