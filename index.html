@@ -255,12 +255,11 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
         buttonActive
           ? (() => {
             colorPicker.setAttribute('onchangeActive', false )
-            colorPicker.removeEventListener('change', eventHandler)
-            ('remove listener')
+            colorPicker.removeEventListener('change', taskColorChange )
             toggleColor.removeAttribute('style')
           })()
           : (() => {
-            colorPicker.addEventListener('change', eventHandler)
+            colorPicker.addEventListener('change', taskColorChange )
             colorPicker.setAttribute('onchangeActive', true)
             toggleColor.style.backgroundColor = "black"
           })()
