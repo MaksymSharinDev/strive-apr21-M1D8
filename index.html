@@ -87,18 +87,39 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
     <input class="btn btn-danger btn-lg" type="text" id="newTask" />
       <script >
+        let input = document.getElementById('newTask').value = ''
         let addNewTask = ()=> {
           let taskListNode = document.getElementById('myTaskList')
           let li = document.createElement('li')
           let input = document.getElementById('newTask')
           li.innerText = input.value 
+          input.value = ''
           taskListNode.append(li)
         }
+
+        let removeFirst = () => {
+          let taskListNode = document.getElementById('myTaskList')
+          taskListNode.firstChild.remove()
+        }
+        let removeLast = () => {
+          let taskListNode = document.getElementById('myTaskList')
+          taskListNode.lastChild.remove()
+        }
+        let getTasksAsArray = () => {
+          let array = []
+          let taskListNode = document.getElementById('myTaskList')
+          taskListNode.childNodes.forEach( node => array.push( node.innerText )) 
+          console.log( array )
+          alert( JSON.stringify(array) )
+         }
+
       </script>
       <div class="d-flex justify-content-center m2">
         <input class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
         <input class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
         <input class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
+        <input class="btn btn-outline-danger btn-lg" type="button" value="getTasksAsArray()" onclick="getTasksAsArray()"
+        style="marigin-left : 10px" />
       </div>
     
     
