@@ -11,3 +11,4 @@
  - [Text Glitch](https://codepen.io/lbebber/pen/ypgql) script by [Lucas Bebber](http://lbebber.github.io) 
  - Library (Dependency): [jquery](https://www.jquery.com)  
  - [HTML5 Palette Color Picker](https://www.jqueryscript.net/other/Flat-HTML5-Palette-Color-Picker-For-jQuery-colorPick-js.html)
+ - [tooltip tour](https://www.cssscript.com/guided-tours-tooltip-sequence/)

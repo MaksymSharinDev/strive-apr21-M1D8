@@ -35,7 +35,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
   <link rel="stylesheet" href="vendor/Flat-HTML5-Palette-Color-Picker/colorPick.dark.theme.css">
   <script src="vendor/Flat-HTML5-Palette-Color-Picker/colorPick.js"></script>
 
-  
+  <link rel="stylesheet" href="vendor/tooltip-sequence/dist/index.css" /> 
+  <script src="vendor/tooltip-sequence/dist/index.js"></script>
 
   <link rel="stylesheet" href="glitchedtext.css">
   <style>
@@ -69,11 +70,13 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
 
       background-image: url(assets/task-background.gif);
       width: clamp(250px, 50%, 2000px);
+      min-height: 250px;
       padding: 50px;
       border-block-style: solid;
       border-color: purple;
       border-radius: 50px;
       background-size: cover;
+      background-position: center;
     }
 
     #myTaskList>li {
@@ -149,13 +152,13 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     data-text='You can add any task you like by writing it in the specified field and then press "Add new task"'>You can
     add any task you like by writing it in the specified field and then press "Add new task"</span><br /><br />
 
-  <input class="btn btn-danger btn-lg" type="text" id="newTask" placeholder="write here task name" />
+  <input id="newTask" class="btn btn-danger btn-lg" type="text" id="newTask" placeholder="write here task name" />
   <div class="container">
     <div class="row justify-content-center">
-      <input class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
-      <input class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
-      <input class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
-      <input class="btn btn-outline-danger btn-lg" type="button" value="getTasksAsArray()" onclick="getTasksAsArray()" />
+      <input id="addTask" class="btn btn-outline-danger btn-lg" type="button" value="Add new Task" onclick="addNewTask()" />
+      <input id="removeFTask" class="btn btn-outline-danger btn-lg" type="button" value="Remove First Task" onclick="removeFirst()" />
+      <input id="removeLTask" class="btn btn-outline-danger btn-lg" type="button" value="Remove Last Task" onclick="removeLast()" />
+      <input id="getTaskArray" class="btn btn-outline-danger btn-lg" type="button" value="getTasksAsArray()" onclick="getTasksAsArray()" />
     </div>
   </div>
     <!---  <div class="d-flex flex-sm-row flex-column justify-content-center m2">--->
@@ -181,11 +184,43 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
   <hr/>
 
   <input hidden type="button" value="Sort" onclick="bubblesort()" />
-
   <script>
-      let input = document.getElementById('newTask').value = ''
-
       
+
+      const steps = [
+      {
+        element: "#newTask",
+        description: "Insert here the task text",
+      },
+      {
+        element: "#addTask",
+        description: "Click here \nfor add the task (task text can't be empty)",
+      },
+      {
+        element: "#removeFTask",
+        description: "Click here \nfor remove 1st task",
+      },
+      {
+        element: "#removeLTask",
+        description: "Click here \nfor remove last task",
+      },
+      {
+        element: "#getTaskArray",
+        description: "Click here for console print \nan array of tasks",
+      },
+      {
+        element: "#toggleColor",
+        description: "Click here for activate/deactivate \ntask background changes",
+      },
+      {
+        element: "#colorPicker",
+        description: "Select here the wanted color \nof tasks' background ",
+      }]
+
+      createSequence({
+      sequence: steps
+      });
+
       $(".colorPickSelector").colorPick({
         'initialColor': '#8e44ad',
         'allowRecent': false,
@@ -197,6 +232,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
           this.element[0].dispatchEvent(new Event('change'));
         }
       });
+
+      let input = document.getElementById('newTask').value = ''
 
       /* EXERCISE 5: 
               Add a new task to the list.
@@ -286,6 +323,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             */
     
   </script>
+  <div class="row" style="min-height: 400px" ></div>
 </body>
 
 </html>
