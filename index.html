@@ -257,7 +257,7 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       */
       const removeLast = () => {
         let taskListNodes = document.querySelectorAll('#myTaskList>li')
-        let node = taskListNodes[ taskListNode.length - 1 ]
+        let node = taskListNodes[ taskListNodes.length - 1 ]
         node.remove()
       }
 
