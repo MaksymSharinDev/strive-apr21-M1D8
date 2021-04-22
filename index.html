@@ -107,6 +107,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
     color: firebrick;
     }
     .colorPickSelector {
+      position: relative;
+
       border-radius: 5px;
       width: 36px;
       height: 36px;
@@ -126,6 +128,12 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
        Create a CSS class for the task list item with a border, a bold text and a bigger font size
        Style every button of the page to be bigger
     */
+    #colorPick{
+    top:  -170px !important;
+    border-color: white;
+    border-style: solid
+}
+    
   </style>
 
   
@@ -264,8 +272,6 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
             colorPicker.setAttribute('onchangeActive', true)
             toggleColor.style.backgroundColor = "black"
           })()
-
-
       }
       /* EXTRA */
 
