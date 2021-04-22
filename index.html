@@ -211,10 +211,9 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       Create a method "removeLast" which removes the last item from the task list
       */
       const removeLast = () => {
-        let taskListNode = document.getElementById('myTaskList')
-        
-        
-        taskListNode.lastChild.remove()
+        let taskListNodes = document.querySelectorAll('#myTaskList>li')
+        let node = taskListNodes[ taskListNode.length - 1 ]
+        node.remove()
       }
 
 
@@ -222,9 +221,12 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       Create a method "removeFirst" which removes the first item from the task list
       */
       const removeFirst = () => {
-        let taskListNode = document.getElementById('myTaskList')
+        let taskListNodes = document.querySelectorAll('#myTaskList>li')
+        let node = taskListNodes[ 0 ]
         // About node.remove(): bug in mozilla remove implementation https://bugzilla.mozilla.org/show_bug.cgi?id=1345301
-        while ( taskListNode.firstChild !== null ) taskListNode.firstChild.remove()
+        console.log( node )
+        node.remove()
+        
       }
       /* EXERCISE 8: 
       Create a method "getTasksAsArray" which returns, and prints to the console an array containing the tasks as string
