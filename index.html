@@ -233,8 +233,8 @@ The have a list of tasks and can, at any time, add a new one, delete one or sort
       */
       const getTasksAsArray = () => {
         let array = []
-        let taskListNode = document.getElementById('myTaskList')
-        taskListNode.childNodes.forEach(node => !!node.innerText ? array.push(node.innerText) : null )
+        let taskListNodes = document.querySelectorAll('#myTaskList>li')
+        taskListNodes.forEach(node => array.push(node.innerText) )
         alert(JSON.stringify(array))
       }
       /* EXERCISE 9:
