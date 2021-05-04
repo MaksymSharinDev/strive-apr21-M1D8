@@ -5,7 +5,7 @@ demo: [strive-apr21-m1d8.netlify.app](strive-apr21-m1d8.netlify.app)
 
 ## Art & Technology :
 
- - Glitched Tab Page Title: (zalgo-text)[https://zalgo.org]
+ - Glitched Tab Page Title: [zalgo-text](https://zalgo.org)
  - CSS library: [Bootstrap 5](https://www.getbootstrap.com)
  - Watchdogs dedsec art by [Mathieu Leduc, Sidonie Weber](https://www.behance.net/gallery/47393655/Watch_Dogs-2-DEDSEC-Video) 
  - Watchdogs font [font](https://www.urbanfonts.com/fonts/HACKED.font) 
