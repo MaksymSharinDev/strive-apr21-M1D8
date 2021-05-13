@@ -1,6 +1,6 @@
 # strive-apr21-M1D8
 
-demo: [strive-apr21-m1d8.netlify.app](strive-apr21-m1d8.netlify.app)
+demo: [strive-apr21-m1d8.netlify.app](https://strive-apr21-m1d8.netlify.app)
 <br>
 
 ## Art & Technology :
